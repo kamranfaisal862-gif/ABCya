@@ -89,4 +89,50 @@
   });
 
   bigLetter.style.background = COLORS["A".charCodeAt(0) % COLORS.length];
+
+  // Grown-up sign-up form -> /api/signup (Vercel function + MongoDB)
+  var form = document.getElementById("signupForm");
+  var msg = document.getElementById("suMsg");
+  var btn = document.getElementById("suBtn");
+
+  function say(text, kind) {
+    msg.textContent = text;
+    msg.className = "form-msg " + (kind || "");
+  }
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var data = {
+        name: form.elements.name.value.trim(),
+        email: form.elements.email.value.trim(),
+        website: form.elements.website.value
+      };
+      if (!data.name) { say("Please enter your name.", "err"); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email)) { say("Please enter a valid email address.", "err"); return; }
+
+      btn.disabled = true;
+      say("Sending…", "");
+      fetch("/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(function (r) {
+          return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, body: j }; });
+        })
+        .then(function (res) {
+          if (res.status === 200 && res.body.ok) {
+            say(res.body.already ? "You're already on the list. Thank you! 🌟" : "You're in! Thank you for joining 🎉", "ok");
+            form.reset();
+          } else {
+            say(res.body.error || "Sign-ups aren't available here. Please try again later.", "err");
+          }
+        })
+        .catch(function () {
+          say("We couldn't reach the server. Please try again.", "err");
+        })
+        .then(function () { btn.disabled = false; });
+    });
+  }
 })();

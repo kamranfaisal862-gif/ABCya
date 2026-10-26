@@ -1,0 +1,10 @@
+{
+  "name": "abcya",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ABCya demo site with a sign-up API (Vercel function + MongoDB Atlas)",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "mongodb": "^6.9.0"
+  }
+}

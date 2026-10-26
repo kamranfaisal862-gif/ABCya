@@ -45,7 +45,7 @@
       <a href="#how">How it works</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-coral" href="#play">Let's play!</a>
+    <a class="btn btn-coral" href="#signup">Join the list</a>
   </header>
 
   <main id="main">
@@ -67,7 +67,7 @@
           <a class="btn btn-sun btn-lg" href="#play">▶ Start playing</a>
           <a class="btn btn-white btn-lg" href="#friends">Meet the friends</a>
         </div>
-        <p class="fine">Free demo website · No sign-up · Nothing is saved</p>
+        <p class="fine">Free demo website · Nothing a child taps is saved</p>
       </div>
 
       <div class="hero-friends">
@@ -194,10 +194,29 @@
       <div class="parent-box">
         <h2>A note for grown-ups</h2>
         <ul>
-          <li>No adverts, no tracking, no accounts in this demo.</li>
+          <li>No adverts and no tracking.</li>
           <li>Nothing a child taps is stored or sent anywhere.</li>
+          <li>If a grown-up joins the list, only their name and email are saved.</li>
           <li>Calm colours, big buttons, and encouraging words only.</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- SIGN UP -->
+    <section class="section signup-sec" id="signup">
+      <div class="signup-box">
+        <h2>Join the ABCya list</h2>
+        <p class="sub">Grown-ups: pop in your name and email and we'll tell you when new games arrive.</p>
+        <form class="signup" id="signupForm" novalidate>
+          <label class="sr" for="suName">Your name</label>
+          <input id="suName" name="name" type="text" placeholder="Your name" autocomplete="name" maxlength="80" required />
+          <label class="sr" for="suEmail">Your email</label>
+          <input id="suEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" maxlength="254" required />
+          <div class="hp" aria-hidden="true"><label>Website <input name="website" type="text" tabindex="-1" autocomplete="off" /></label></div>
+          <button class="btn btn-sun" id="suBtn" type="submit">Join the list ✉️</button>
+        </form>
+        <p class="form-msg" id="suMsg" role="status" aria-live="polite"></p>
+        <p class="fine center">We store only your name and email, just for this demo. Children should ask a grown-up first.</p>
       </div>
     </section>
 
