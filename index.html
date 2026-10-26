@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ABCya — Learning made playful</title>
+  <meta name="description" content="ABCya is a demo learning platform with calm, guided lessons in Maths, English and Science." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔤%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span class="logo" aria-hidden="true">A</span>
+      <span class="brand-name">ABCya</span>
+      <span class="pill">LEARNING ASSISTANT</span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#subjects">Subjects</a>
+      <a href="#how">How it works</a>
+      <a href="#trust">Trust</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="actions">
+      <a class="signin" href="#">Sign in</a>
+      <a class="btn btn-dark" href="#start">Start free</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>Learning that feels<br />calm, clear and fun.</h1>
+      <p class="lead">No more Sunday-night planning. No more guessing if you are doing enough. ABCya guides every lesson, step by step.</p>
+      <div class="cta">
+        <a class="btn btn-dark btn-lg" id="start" href="#signup">Start your free assessment →</a>
+        <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
+      </div>
+      <p class="fine">14-day trial. No card required. Cancel anytime.</p>
+      <ul class="badges">
+        <li>UK GDPR compliant</li>
+        <li>Encrypted</li>
+        <li>Designed with the Children's Code in mind</li>
+      </ul>
+    </section>
+
+    <section class="strip" aria-label="Standards">
+      <span>Pearson Edexcel</span><i></i><span>AQA</span><i></i><span>OCR</span><i></i><span>UK GDPR</span><i></i><span>Children's Code</span>
+    </section>
+
+    <section class="stats" aria-label="At a glance">
+      <div><strong>3</strong><span>Core subjects — Maths, English &amp; Science</span></div>
+      <div><strong>6</strong><span>Helper tools working together</span></div>
+      <div><strong>100%</strong><span>Lessons reviewed before children see them</span></div>
+      <div><strong>24/7</strong><span>Learn whenever suits your family</span></div>
+    </section>
+
+    <section id="subjects" class="section">
+      <h2>Three subjects. One calm place.</h2>
+      <div class="cards">
+        <article class="card"><div class="ico">➗</div><h3>Maths</h3><p>Number, algebra and geometry with worked examples and gentle practice.</p></article>
+        <article class="card"><div class="ico">📖</div><h3>English</h3><p>Reading, writing and grammar, with feedback that is always encouraging.</p></article>
+        <article class="card"><div class="ico">🔬</div><h3>Science</h3><p>Biology, chemistry and physics explained in short, friendly steps.</p></article>
+      </div>
+    </section>
+
+    <section id="how" class="section alt">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><b>1</b><div><h3>Take a short assessment</h3><p>We find where your child is today — no pressure, no scores shown to them.</p></div></li>
+        <li><b>2</b><div><h3>Get a weekly plan</h3><p>A simple schedule you can follow or change in a minute.</p></div></li>
+        <li><b>3</b><div><h3>Learn and track progress</h3><p>Parents see a clear record of what has been covered.</p></div></li>
+      </ol>
+    </section>
+
+    <section id="trust" class="section">
+      <h2>Built on trust</h2>
+      <div class="cards">
+        <article class="card"><h3>Reviewed content</h3><p>Questions are written by people. Explanations are checked before they are shown.</p></article>
+        <article class="card"><h3>Private by design</h3><p>No advertising. No tracking of children. Data stays with your family.</p></article>
+        <article class="card"><h3>Parent in control</h3><p>You choose what is taught, when, and can export everything at any time.</p></article>
+      </div>
+    </section>
+
+    <section id="faq" class="section alt">
+      <h2>Questions</h2>
+      <div class="faq">
+        <details><summary>Is this a real product?</summary><p>No — ABCya here is a free demo website made for practice.</p></details>
+        <details><summary>Do I need a card for the trial?</summary><p>No. The demo has no payments at all.</p></details>
+        <details><summary>Which ages is it for?</summary><p>The demo is written with ages 5–14 in mind.</p></details>
+      </div>
+    </section>
+
+    <section id="signup" class="section cta-band">
+      <h2>Ready to try it?</h2>
+      <form class="signup" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thanks! (demo only)'; this.reset();">
+        <label class="sr" for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required />
+        <button class="btn btn-dark" type="submit">Join the waiting list</button>
+      </form>
+      <p class="fine">Demo form — nothing is sent or stored.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 ABCya demo</span>
+    <span>Not affiliated with any other site of a similar name.</span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+:root{
+  --bg:#faf8f2; --ink:#1f3a2e; --muted:#5f6f66; --line:#e6e2d6; --card:#ffffff; --alt:#f3f0e6; --accent:#c8791a;
+  --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 5vw;background:rgba(250,248,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--ink);color:#fff;font-family:var(--serif);font-weight:600}
+.brand-name{font-family:var(--serif);font-size:1.4rem;font-weight:600}
+.pill{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:2px 10px}
+.links{display:flex;gap:28px;font-weight:500;font-size:.95rem}
+.links a:hover{color:var(--accent)}
+.actions{display:flex;align-items:center;gap:20px}
+.signin{font-weight:500}
+
+.btn{display:inline-block;border-radius:999px;padding:10px 20px;font-weight:600;border:1px solid transparent;cursor:pointer;font:inherit;font-weight:600}
+.btn-dark{background:var(--ink);color:#fff;box-shadow:0 6px 18px rgba(31,58,46,.25)}
+.btn-dark:hover{background:#16291f}
+.btn-ghost{border-color:var(--line);color:var(--muted);background:transparent}
+.btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
+.btn-lg{padding:16px 30px;font-size:1.05rem}
+
+.hero{text-align:center;padding:96px 5vw 64px;max-width:900px;margin:0 auto}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.1;margin:0 0 20px}
+.lead{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.2rem;max-width:620px;margin:0 auto 32px}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.fine{color:var(--muted);font-size:.85rem;margin-top:20px}
+.badges{list-style:none;display:flex;gap:22px;justify-content:center;flex-wrap:wrap;padding:0;margin:28px 0 0;color:var(--muted);font-size:.82rem}
+.badges li::before{content:"✓ ";color:var(--accent)}
+
+.strip{display:flex;gap:22px;justify-content:center;align-items:center;flex-wrap:wrap;padding:30px 5vw;border-block:1px solid var(--line);font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.strip i{width:5px;height:5px;border-radius:50%;background:#7a9a8a}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;max-width:1100px;margin:0 auto;padding:72px 5vw}
+.stats strong{display:block;font-family:var(--mono);font-size:3.4rem;font-weight:500;line-height:1}
+.stats span{display:block;margin-top:10px;color:var(--muted);font-size:.95rem}
+
+.section{padding:80px 5vw;max-width:1100px;margin:0 auto}
+.section.alt{max-width:none;background:var(--alt)}
+.section.alt>*{max-width:1100px;margin-inline:auto}
+.section h2{font-family:var(--serif);font-weight:500;font-size:2.2rem;margin:0 0 36px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+.card h3{margin:8px 0;font-family:var(--serif);font-weight:600}
+.card p{margin:0;color:var(--muted)}
+.ico{font-size:1.8rem}
+
+.steps{list-style:none;margin:0 auto;padding:0;display:grid;gap:24px}
+.steps li{display:flex;gap:18px;align-items:flex-start}
+.steps b{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;font-family:var(--mono)}
+.steps h3{margin:0 0 4px;font-family:var(--serif)}
+.steps p{margin:0;color:var(--muted)}
+
+.faq{display:grid;gap:12px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin:10px 0 0;color:var(--muted)}
+
+.cta-band{text-align:center}
+.signup{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.signup input{min-width:260px;padding:12px 18px;border-radius:999px;border:1px solid var(--line);font:inherit;background:#fff}
+
+.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:28px 5vw;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+
+@media (max-width:760px){
+  .links,.signin{display:none}
+  .pill{display:none}
+  .hero{padding-top:60px}
+}
