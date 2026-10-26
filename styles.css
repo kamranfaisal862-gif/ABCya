@@ -16,8 +16,10 @@ h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
 /* NAV */
 .nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 5vw;background:#fff;border-bottom:4px solid var(--sun)}
 .brand{display:flex;align-items:center;gap:10px}
-.logo{display:flex;gap:1px;font-family:var(--head);font-weight:700;font-size:1.6rem}
-.brand-name{font-family:var(--head);font-weight:700;font-size:1.5rem;color:var(--ink)}
+.logo{width:46px;height:46px;flex:none;transition:transform .2s}
+.brand:hover .logo{transform:rotate(-8deg) scale(1.08)}
+.brand-name{font-family:var(--head);font-weight:700;font-size:1.9rem;letter-spacing:.5px;color:var(--ink);line-height:1}
+.brand-name span{color:var(--coral)}
 .links{display:flex;gap:6px}
 .links a{padding:8px 14px;border-radius:999px;font-weight:700;font-size:.98rem}
 .links a:hover{background:var(--sky)}
