@@ -3,110 +3,218 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ABCya — Learning made playful</title>
-  <meta name="description" content="ABCya is a demo learning platform with calm, guided lessons in Maths, English and Science." />
+  <title>ABCya — Learn and play!</title>
+  <meta name="description" content="ABCya is a free demo website with friendly characters, letter games and fun lessons in Maths, English and Science." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔤%3C/text%3E%3C/svg%3E" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23ffcf3f'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' font-family='Arial' font-weight='700' fill='%232b2d57'%3EA%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Reusable character faces -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <g id="eyes">
+        <g class="eye"><ellipse cx="-16" cy="0" rx="9" ry="11" fill="#fff"/><circle cx="-14" cy="2" r="5" fill="#2b2d57"/><circle cx="-12" cy="0" r="1.8" fill="#fff"/></g>
+        <g class="eye"><ellipse cx="16" cy="0" rx="9" ry="11" fill="#fff"/><circle cx="18" cy="2" r="5" fill="#2b2d57"/><circle cx="20" cy="0" r="1.8" fill="#fff"/></g>
+      </g>
+      <g id="smile">
+        <path d="M-14 0 Q0 18 14 0 Z" fill="#2b2d57"/>
+        <path d="M-8 6 Q0 14 8 6 Q0 10 -8 6Z" fill="#ff7a8a"/>
+      </g>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#main">Skip to content</a>
+
   <header class="nav">
-    <a class="brand" href="#top">
-      <span class="logo" aria-hidden="true">A</span>
+    <a class="brand" href="#top" aria-label="ABCya home">
+      <span class="logo" aria-hidden="true"><b style="color:#ff6b6b">A</b><b style="color:#ffcf3f">B</b><b style="color:#4cd07d">C</b></span>
       <span class="brand-name">ABCya</span>
-      <span class="pill">LEARNING ASSISTANT</span>
     </a>
     <nav class="links" aria-label="Main">
+      <a href="#play">Play</a>
       <a href="#subjects">Subjects</a>
+      <a href="#friends">Friends</a>
       <a href="#how">How it works</a>
-      <a href="#trust">Trust</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <div class="actions">
-      <a class="signin" href="#">Sign in</a>
-      <a class="btn btn-dark" href="#start">Start free</a>
-    </div>
+    <a class="btn btn-coral" href="#play">Let's play!</a>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <h1>Learning that feels<br />calm, clear and fun.</h1>
-      <p class="lead">No more Sunday-night planning. No more guessing if you are doing enough. ABCya guides every lesson, step by step.</p>
-      <div class="cta">
-        <a class="btn btn-dark btn-lg" id="start" href="#signup">Start your free assessment →</a>
-        <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="sky" aria-hidden="true">
+        <span class="sun"></span>
+        <span class="cloud c1"></span><span class="cloud c2"></span><span class="cloud c3"></span>
+        <span class="float f1">A</span><span class="float f2">B</span><span class="float f3">C</span>
+        <span class="float f4">1</span><span class="float f5">2</span><span class="float f6">3</span>
+        <span class="float f7">★</span><span class="float f8">★</span>
       </div>
-      <p class="fine">14-day trial. No card required. Cancel anytime.</p>
-      <ul class="badges">
-        <li>Demo site</li>
-        <li>No data collected</li>
-        <li>Made for practice</li>
-      </ul>
+
+      <div class="hero-inner">
+        <p class="kicker">Hello, explorer! 👋</p>
+        <h1>Let's <span class="w1">learn</span> and <span class="w2">play</span> together!</h1>
+        <p class="lead">Fun letters, numbers and science with friendly helpers who cheer you on.</p>
+        <div class="cta">
+          <a class="btn btn-sun btn-lg" href="#play">▶ Start playing</a>
+          <a class="btn btn-white btn-lg" href="#friends">Meet the friends</a>
+        </div>
+        <p class="fine">Free demo website · No sign-up · Nothing is saved</p>
+      </div>
+
+      <div class="hero-friends">
+        <button class="mascot-btn" id="mascot" type="button" aria-label="Tap Blip the helper for a surprise">
+          <span class="bubble" id="bubble" role="status" aria-live="polite">Tap me! 🎉</span>
+          <svg viewBox="0 0 200 220" class="char" role="img" aria-label="Blip, a friendly yellow character with an antenna">
+            <g class="bounce">
+              <line x1="100" y1="22" x2="100" y2="48" stroke="#2b2d57" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="100" cy="18" r="10" fill="#ff6b6b" class="blink-light"/>
+              <ellipse cx="100" cy="200" rx="52" ry="8" fill="rgba(43,45,87,.12)"/>
+              <path d="M40 120 C40 70 70 46 100 46 C130 46 160 70 160 120 C160 165 135 192 100 192 C65 192 40 165 40 120Z" fill="#ffcf3f" stroke="#2b2d57" stroke-width="5"/>
+              <ellipse cx="68" cy="140" rx="12" ry="8" fill="#ff9aa8" opacity=".8"/>
+              <ellipse cx="132" cy="140" rx="12" ry="8" fill="#ff9aa8" opacity=".8"/>
+              <g transform="translate(100 110)"><use href="#eyes"/></g>
+              <g transform="translate(100 144)"><use href="#smile"/></g>
+              <path d="M40 130 Q18 120 22 98" fill="none" stroke="#2b2d57" stroke-width="5" stroke-linecap="round" class="wave"/>
+              <path d="M160 130 Q182 120 178 98" fill="none" stroke="#2b2d57" stroke-width="5" stroke-linecap="round"/>
+            </g>
+          </svg>
+        </button>
+      </div>
+
+      <svg class="wave-edge" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 100 480 0 720 40 C960 80 1200 10 1440 50 L1440 90 L0 90Z" fill="#fff8e7"/></svg>
     </section>
 
-    <section class="strip" aria-label="Standards">
-      <span>Maths</span><i></i><span>English</span><i></i><span>Science</span><i></i><span>Ages 5–14</span><i></i><span>Free demo</span>
+    <!-- LETTER GAME -->
+    <section class="section play" id="play">
+      <h2>Tap a letter!</h2>
+      <p class="sub">Pick any letter to see a word. Press the speaker to hear it.</p>
+
+      <div class="stage" aria-live="polite">
+        <div class="big-letter" id="bigLetter" aria-hidden="true">A</div>
+        <div class="word-card">
+          <div class="word-emoji" id="wordEmoji" aria-hidden="true">🍎</div>
+          <div class="word" id="word">A is for Apple</div>
+          <button class="btn btn-green" id="speak" type="button">🔊 Say it</button>
+        </div>
+      </div>
+
+      <div class="letters" id="letters" role="group" aria-label="Alphabet"></div>
+
+      <p class="stars" aria-live="polite">Stars collected: <strong id="starCount">0</strong> <span id="stars" aria-hidden="true"></span></p>
     </section>
 
-    <section class="stats" aria-label="At a glance">
-      <div><strong>3</strong><span>Core subjects — Maths, English &amp; Science</span></div>
-      <div><strong>6</strong><span>Helper tools working together</span></div>
-      <div><strong>100%</strong><span>Lessons reviewed before children see them</span></div>
-      <div><strong>24/7</strong><span>Learn whenever suits your family</span></div>
-    </section>
-
-    <section id="subjects" class="section">
-      <h2>Three subjects. One calm place.</h2>
+    <!-- SUBJECTS -->
+    <section class="section subjects" id="subjects">
+      <h2>Pick your adventure</h2>
       <div class="cards">
-        <article class="card"><div class="ico">➗</div><h3>Maths</h3><p>Number, algebra and geometry with worked examples and gentle practice.</p></article>
-        <article class="card"><div class="ico">📖</div><h3>English</h3><p>Reading, writing and grammar, with feedback that is always encouraging.</p></article>
-        <article class="card"><div class="ico">🔬</div><h3>Science</h3><p>Biology, chemistry and physics explained in short, friendly steps.</p></article>
+        <article class="card c-blue">
+          <svg viewBox="0 0 160 160" class="char-sm" role="img" aria-label="Numo, a blue character">
+            <g class="bounce2">
+              <path d="M30 90 C30 48 58 28 80 28 C102 28 130 48 130 90 C130 128 108 148 80 148 C52 148 30 128 30 90Z" fill="#59b8ff" stroke="#2b2d57" stroke-width="4.5"/>
+              <path d="M44 48 L36 20 L62 36Z" fill="#59b8ff" stroke="#2b2d57" stroke-width="4.5" stroke-linejoin="round"/>
+              <path d="M116 48 L124 20 L98 36Z" fill="#59b8ff" stroke="#2b2d57" stroke-width="4.5" stroke-linejoin="round"/>
+              <g transform="translate(80 84) scale(.85)"><use href="#eyes"/></g>
+              <g transform="translate(80 110) scale(.85)"><use href="#smile"/></g>
+              <text x="80" y="144" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="20" fill="#fff">+ ×</text>
+            </g>
+          </svg>
+          <h3>Maths with Numo</h3>
+          <p>Count, add and spot shapes in tiny, friendly steps.</p>
+          <span class="tag">Numbers · Shapes · Puzzles</span>
+        </article>
+
+        <article class="card c-pink">
+          <svg viewBox="0 0 160 160" class="char-sm" role="img" aria-label="Abby, a pink character">
+            <g class="bounce2 d1">
+              <path d="M30 92 C30 50 56 30 80 30 C104 30 130 50 130 92 C130 128 108 148 80 148 C52 148 30 128 30 92Z" fill="#ff8fb1" stroke="#2b2d57" stroke-width="4.5"/>
+              <path d="M80 30 L80 14 M80 14 L68 6 M80 14 L92 6" stroke="#2b2d57" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+              <circle cx="68" cy="5" r="5" fill="#ffcf3f" stroke="#2b2d57" stroke-width="3"/>
+              <circle cx="92" cy="5" r="5" fill="#ffcf3f" stroke="#2b2d57" stroke-width="3"/>
+              <g transform="translate(80 84) scale(.85)"><use href="#eyes"/></g>
+              <g transform="translate(80 110) scale(.85)"><use href="#smile"/></g>
+              <text x="80" y="144" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="20" fill="#fff">A b c</text>
+            </g>
+          </svg>
+          <h3>English with Abby</h3>
+          <p>Letters, sounds and stories that make reading feel like a game.</p>
+          <span class="tag">Letters · Words · Stories</span>
+        </article>
+
+        <article class="card c-green">
+          <svg viewBox="0 0 160 160" class="char-sm" role="img" aria-label="Zap, a green character">
+            <g class="bounce2 d2">
+              <path d="M28 94 C28 52 54 32 80 32 C106 32 132 52 132 94 C132 130 108 148 80 148 C52 148 28 130 28 94Z" fill="#5fd98a" stroke="#2b2d57" stroke-width="4.5"/>
+              <path d="M70 32 L62 12 M90 32 L98 12" stroke="#2b2d57" stroke-width="4.5" stroke-linecap="round"/>
+              <path d="M59 6 L65 18 L53 18Z M101 6 L107 18 L95 18Z" fill="#ffcf3f" stroke="#2b2d57" stroke-width="3" stroke-linejoin="round"/>
+              <g transform="translate(80 86) scale(.85)"><use href="#eyes"/></g>
+              <g transform="translate(80 112) scale(.85)"><use href="#smile"/></g>
+              <text x="80" y="144" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="20" fill="#fff">⚡ ✿</text>
+            </g>
+          </svg>
+          <h3>Science with Zap</h3>
+          <p>Plants, planets and experiments you can wonder about.</p>
+          <span class="tag">Nature · Space · Experiments</span>
+        </article>
       </div>
     </section>
 
-    <section id="how" class="section alt">
+    <!-- FRIENDS -->
+    <section class="section friends" id="friends">
+      <h2>Meet your learning friends</h2>
+      <div class="cast">
+        <div class="cast-item"><div class="bubble-pop">I love counting!</div><h3>Numo</h3><p>Loves numbers and shapes.</p></div>
+        <div class="cast-item"><div class="bubble-pop">Let's read a story!</div><h3>Abby</h3><p>Loves letters and words.</p></div>
+        <div class="cast-item"><div class="bubble-pop">Why is the sky blue?</div><h3>Zap</h3><p>Loves asking big questions.</p></div>
+        <div class="cast-item"><div class="bubble-pop">You can do it!</div><h3>Blip</h3><p>Cheers for everyone.</p></div>
+      </div>
+      <p class="fine center">Numo, Abby, Zap and Blip are original characters drawn for this demo.</p>
+    </section>
+
+    <!-- HOW -->
+    <section class="section how" id="how">
       <h2>How it works</h2>
       <ol class="steps">
-        <li><b>1</b><div><h3>Take a short assessment</h3><p>We find where your child is today — no pressure, no scores shown to them.</p></div></li>
-        <li><b>2</b><div><h3>Get a weekly plan</h3><p>A simple schedule you can follow or change in a minute.</p></div></li>
-        <li><b>3</b><div><h3>Learn and track progress</h3><p>Parents see a clear record of what has been covered.</p></div></li>
+        <li><span class="num n1">1</span><h3>Pick a game</h3><p>Choose a letter, number or science topic.</p></li>
+        <li><span class="num n2">2</span><h3>Play and learn</h3><p>Short, gentle activities. No rushing, no pressure.</p></li>
+        <li><span class="num n3">3</span><h3>Collect stars</h3><p>Every try earns a star. Mistakes are part of learning!</p></li>
       </ol>
     </section>
 
-    <section id="trust" class="section">
-      <h2>Built on trust</h2>
-      <div class="cards">
-        <article class="card"><h3>Reviewed content</h3><p>Questions are written by people. Explanations are checked before they are shown.</p></article>
-        <article class="card"><h3>Private by design</h3><p>No advertising. No tracking of children. Data stays with your family.</p></article>
-        <article class="card"><h3>Parent in control</h3><p>You choose what is taught, when, and can export everything at any time.</p></article>
+    <!-- PARENTS -->
+    <section class="section parents">
+      <div class="parent-box">
+        <h2>A note for grown-ups</h2>
+        <ul>
+          <li>No adverts, no tracking, no accounts in this demo.</li>
+          <li>Nothing a child taps is stored or sent anywhere.</li>
+          <li>Calm colours, big buttons, and encouraging words only.</li>
+        </ul>
       </div>
     </section>
 
-    <section id="faq" class="section alt">
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
       <h2>Questions</h2>
-      <div class="faq">
+      <div class="faq-list">
         <details><summary>Is this a real product?</summary><p>No — ABCya here is a free demo website made for practice.</p></details>
-        <details><summary>Do I need a card for the trial?</summary><p>No. The demo has no payments at all.</p></details>
-        <details><summary>Which ages is it for?</summary><p>The demo is written with ages 5–14 in mind.</p></details>
+        <details><summary>Does it cost anything?</summary><p>No. The demo is free and has no payments.</p></details>
+        <details><summary>Which ages is it for?</summary><p>The demo is written with ages 5–10 in mind.</p></details>
+        <details><summary>Why does the speaker button sometimes stay quiet?</summary><p>It uses your device's built-in voice. Some devices have it turned off or muted.</p></details>
       </div>
-    </section>
-
-    <section id="signup" class="section cta-band">
-      <h2>Ready to try it?</h2>
-      <form class="signup" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thanks! (demo only)'; this.reset();">
-        <label class="sr" for="email">Email</label>
-        <input id="email" type="email" placeholder="you@example.com" required />
-        <button class="btn btn-dark" type="submit">Join the waiting list</button>
-      </form>
-      <p class="fine">Demo form — nothing is sent or stored.</p>
     </section>
   </main>
 
   <footer class="footer">
-    <span>© 2026 ABCya demo</span>
-    <span>Not affiliated with any other site of a similar name.</span>
+    <div class="foot-chars" aria-hidden="true">
+      <span>🌈</span><span>🚀</span><span>🦄</span><span>🌟</span><span>🐢</span>
+    </div>
+    <p>© 2026 ABCya demo · Not affiliated with any other site of a similar name.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
